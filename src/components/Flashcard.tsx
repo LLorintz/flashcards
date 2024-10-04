@@ -14,7 +14,7 @@ const Flashcard = ({flashcard}:flashcardObject) => {
         <div className="front">
             {flashcard.question}
         </div>
-        <div className="back">{flashcard.answer}</div>
+        <div className="back">{flashcard.correct_answer}</div>
     </div>
   )
 }
