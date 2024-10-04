@@ -15,8 +15,8 @@ export const getQuestions = async ():Promise<flashCardtype[]>=>{
       const formattedResults= data.results.map((item:flashCardtype, index:number) => (
         {
           id:index+1,
-          question:item.question,
-          correct_answer:item.correct_answer
+          question: decodeString(item.question),
+          correct_answer:decodeString(item.correct_answer)
         }
       ))
    //   console.log(data.results)
@@ -26,6 +26,12 @@ export const getQuestions = async ():Promise<flashCardtype[]>=>{
       console.error('error: ', error)
       return[];
     }
+  }
+
+  const decodeString=(str:string)=>{
+    const textarea = document.createElement('textarea') as HTMLTextAreaElement;
+    textarea.innerHTML=str;
+    return textarea.value;
   }
 
 const Api = () => {

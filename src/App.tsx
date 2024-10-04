@@ -27,9 +27,9 @@ function App() {
   },[])
   const [flashcards, setFlashcards] = useState<flashCardtype[]>(mock)
   return (
-    <>
+    <div className="container">
    <FlashCardList cards = {flashcards}></FlashCardList>
-    </>
+    </div>
   )
 }
 

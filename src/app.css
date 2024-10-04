@@ -4,11 +4,30 @@
     box-sizing: border-box;
 }
 
+
 body{
     background-color: #c8d0d2;
+    
+    height: 100vh;
+}
+
+.container{
+    max-width: 900px;
+    margin: 1rem 2rem;
+    margin: 0 auto; 
+}
+
+.card-grid{
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    grid-template-columns: repeat(auto-fill,minmax(200px,1fr));
+    gap: 1rem;
 }
 
 .card{
+  
     display: flex;
     align-items: center;
     justify-content: center;
@@ -18,12 +37,12 @@ body{
     background: wheat;
     transform-style:preserve-3d ;
     padding: 1rem;
-    height: 150px;
+    height: 200px;
     width:150px;
     transition: 150ms;
     transform: perspective(1000px) rotateY(180deg,0);
     cursor:pointer;
-    perspective: 1000px;
+  
 }
 
 .flip{
