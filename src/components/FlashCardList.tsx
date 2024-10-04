@@ -8,11 +8,13 @@ type flashcardArray ={
 const FlashCardList = ({cards}:flashcardArray) => {
   return (
     <div className="card-grid">
-        {cards.map(flashcard => (
-            <Flashcard key={flashcard.id} flashcard={flashcard}></Flashcard>
-        )
-            
-        )}
+         {cards.length > 0 ? (
+        cards.map(flashcard => (
+          <Flashcard key={flashcard.id} flashcard={flashcard} />
+        ))
+      ) : (
+        <p>Nincs kérdés elérhető.</p>
+      )}
     </div>
   )
 }
